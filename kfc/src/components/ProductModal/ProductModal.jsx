@@ -5,7 +5,7 @@ import "react-multi-carousel/lib/styles.css";
 import products from "../../mocks/products.json";
 import YourFavourite from "../YourFavourite/YourFavourite";
 import { IconContext } from "react-icons/lib";
-import { IoIosAdd } from "react-icons/io";
+import { IoIosAddCircleOutline } from "react-icons/io";
 import { RiSubtractFill } from "react-icons/ri";
 import "./ProductModal.scss";
 
@@ -15,24 +15,24 @@ const ProductModal = (props) => {
   const { product, isVisible, toggleIsVisible, onProductSelect } = props;
   const { imageUrl, name, price, description } = product;
   const [quantity, setQuantity] = useState(1);
-  //   const responsive = {
-  //     superLargeDesktop: {
-  //       breakpoint: { max: 4000, min: 3000 },
-  //       items: 5,
-  //     },
-  //     desktop: {
-  //       breakpoint: { max: 3000, min: 1024 },
-  //       items: 3,
-  //     },
-  //     tablet: {
-  //       breakpoint: { max: 1024, min: 464 },
-  //       items: 2,
-  //     },
-  //     mobile: {
-  //       breakpoint: { max: 464, min: 0 },
-  //       items: 1,
-  //     },
-  //   };
+  const responsive = {
+    superLargeDesktop: {
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
+  };
 
   const handleQuantityAdd = () => {
     setQuantity(quantity + 1);
@@ -76,32 +76,11 @@ const ProductModal = (props) => {
         </div>
         <div className="add-your-alikes">
           <p>Dodaj to co lubisz:</p>
-          {/* <Carousel responsive={responsive}>
+          <Carousel responsive={responsive}>
             {products.slice(0, 5).map((product) => (
               <YourFavourite product={product} />
             ))}
-            <div className="your-favourite">
-              <img src={product.imgUrl} alt={product.name} />
-              <h4>{product.name}</h4>
-              <button className="add-to-basket">
-                <IoIosAddCircleOutline />
-              </button>
-            </div>
-            <div className="your-favourite">
-              <img src={product.imgUrl} alt={product.name} />
-              <h4>{product.name}</h4>
-              <button className="add-to-basket">
-                <IoIosAddCircleOutline />
-              </button>
-            </div>
-            <div className="your-favourite">
-              <img src={product.imgUrl} alt={product.name} />
-              <h4>{product.name}</h4>
-              <button className="add-to-basket">
-                <IoIosAddCircleOutline />
-              </button>
-            </div>
-          </Carousel> */}
+          </Carousel>
         </div>
         <div className="buttons-bot">
           <div className="quantity">
