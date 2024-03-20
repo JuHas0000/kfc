@@ -50,57 +50,13 @@ const ProductModal = (props) => {
     setQuantity(1);
   };
   return (
-    <div className={"background" + (isVisible ? "" : " hidden")}>
-      <div className="product-modal">
-        <div className="buttons-top">
-          <button className="back" onClick={handleBackButtonClick}>
-            <IconContext.Provider value={{ size: "3vh" }}>
-              <FaLongArrowAltLeft />
-            </IconContext.Provider>
-          </button>
-          <button className="favourite">
-            <IconContext.Provider value={{ size: "3vh" }}>
-              <FaRegHeart />
-            </IconContext.Provider>
-          </button>
-        </div>
-        <div className="info">
-          <div className="image">
-            <img src={imageUrl} alt={name} />
-          </div>
-          <header>
-            <h4>{name}</h4>
-            <h4>{price}</h4>
-          </header>
-          <p className="description">{description}</p>
-        </div>
-        <div className="add-your-alikes">
-          <p>Dodaj to co lubisz:</p>
-          <Carousel responsive={responsive}>
-            {products.slice(0, 5).map((product) => (
-              <YourFavourite product={product} />
-            ))}
-          </Carousel>
-        </div>
-        <div className="buttons-bot">
-          <div className="quantity">
-            <button
-              className="sub"
-              onClick={handleQuantitySub}
-              disabled={quantity === 1}
-            >
-              -
-            </button>
-            <p>{quantity}</p>
-            <button className="add" onClick={handleQuantityAdd}>
-              +
-            </button>
-          </div>
-          <button className="add-product" onClick={handleAddProductButtonClick}>
-            DODAJ DO KOSZYKA {quantity * price}
-          </button>
-        </div>
-      </div>
+    <div className={`backgroud ${isVisible === true ? "" : "hidden"}`}>
+      <header></header>
+      <section className="product_info">
+        <p>tak</p>
+      </section>
+      <section className="favourite_products"></section>
+      <section className="add_product"></section>
     </div>
   );
 };

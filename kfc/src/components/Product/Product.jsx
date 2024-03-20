@@ -21,12 +21,14 @@ const Product = (props) => {
 
   return (
     <>
-      <ProductModal
-        product={product}
-        isVisible={isModalVisible}
-        toggleIsVisible={handleButtonClick}
-        onProductSelect={onProductSelect}
-      />
+      {isModalVisible && (
+        <ProductModal
+          product={product}
+          isVisible={isModalVisible}
+          toggleIsVisible={handleButtonClick}
+          onProductSelect={onProductSelect}
+        />
+      )}
       <article
         className="product"
         style={{
